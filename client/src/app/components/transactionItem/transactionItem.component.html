@@ -1,0 +1,9 @@
+<div>
+  <a [routerLink]="['/transaction', index()]"
+    >{{ data()!.otherParty ? data()!.otherParty!.name : "not found" }}
+    {{
+      data()!.amount
+        | transferConverter : data()!.currencyCode : data()!.currencyRate
+    }}</a
+  >
+</div>

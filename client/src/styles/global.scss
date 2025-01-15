@@ -1,0 +1,23 @@
+@use "mixins";
+
+// root variables
+:root {
+  // colors
+  --color-primary: hsl(219, 100%, 50%);
+  --color-secondary: hsl(24, 100%, 50%);
+  --color-text: hsl(219, 2%, 13%);
+  --color-logo: hsl(235, 100%, 33%);
+  --color-background-highlight: hsl(219, 2%, 96%);
+  --color-background: hsl(0, 0%, 100%);
+
+  // font
+  --font-family: helvetica, sans-serif;
+  --font-size: 16px;
+  --font-line-height: 1.4;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}

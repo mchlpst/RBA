@@ -1,9 +1,31 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 const app = express();
 
+const allowedOrigins = [
+  'http://localhost:8080',
+  'http://localhost:4200',
+  'https://development.server',
+  'https://frontend.development.server',
+  'https://production.server',
+  'https://frontend.production.server',
+]
+
+app.use(cors({
+  origin: function (origin: any, callback: any) {
+
+    if (!origin) return callback(null, true);
+    if (allowedOrigins.indexOf(origin) === -1) {
+      var msg = 'The CORS policy for this site does not ' +
+        'allow access from the specified Origin.';
+      return callback(new Error(msg), false);
+    }
+    return callback(null, true);
+  }
+}));
 app.use(bodyParser.json()); // support json encoded bodies
-app.use(bodyParser.urlencoded({extended: false})); // support encoded bodies
+app.use(bodyParser.urlencoded({ extended: false })); // support encoded bodies
 
 app.get('/', (req: any, res: any) => {
   console.log(req.body);
