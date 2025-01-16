@@ -1,14 +1,14 @@
-<section>
-  <ul>
+<section class="transaction-list">
+  <ul class="transaction-list__list">
     @for (transaction of transactions(); track $index) {
-    <li>
+    <li class="transaction-list__item">
       <transaction-item
         [data]="transaction"
         [index]="$index"
       ></transaction-item>
     </li>
     } @empty {
-    <li>No transactions found...</li>
+    <li class="transaction-list__item--not-found">No transactions found...</li>
     }
   </ul>
 </section>

@@ -1,0 +1,11 @@
+$component: "transaction-item";
+
+.#{$component} {
+  &__link {
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    color: var(--color-text);
+  }
+}

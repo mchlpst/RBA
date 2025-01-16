@@ -1,20 +1,34 @@
 $componentMain: "main";
 $componentError: "error-message";
 
+.container {
+  max-width: 910px;
+  width: 910px;
+  padding: 30px;
+  margin: 20px 0;
+  background-color: white;
+  border: 1px solid var(--color-background-highlight-dark);
+  border-radius: 5px;
+}
+
 .#{$componentError} {
   display: flex;
   justify-content: center;
+  &__container {
+    @extend .container !optional;
+  }
 }
 .#{$componentMain} {
   display: flex;
   justify-content: center;
   padding-top: 60px;
   &__container {
-    max-width: 1023px;
-    padding: 30px;
-    margin: 40px 0;
-    background-color: white;
-    border: 1px solid var(--color-background-highlight-dark);
-    border-radius: 10px;
+    @extend .container !optional;
+  }
+  &__title {
+    text-align: center;
+  }
+  &__logo {
+    width: 140px;
   }
 }

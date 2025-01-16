@@ -1,14 +1,14 @@
 import { Component, OnInit, computed, signal, inject, effect, input } from "@angular/core";
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { Store } from "../../stores/data.store";
 import { TransferConverterPipe } from "../../../pipes/transfer-converter.pipe";
-import { DatePipe } from "@angular/common";
+import { DatePipe, NgIf } from "@angular/common";
 
 @Component({
   selector: 'transaction-detail',
   styleUrl: './transactionDetail.component.scss',
   templateUrl: './transactionDetail.component.html',
-  imports: [TransferConverterPipe, DatePipe]
+  imports: [TransferConverterPipe, DatePipe, RouterLink, NgIf]
 })
 
 export class TransactionDetail implements OnInit {
@@ -21,7 +21,7 @@ export class TransactionDetail implements OnInit {
     if (this.index !== undefined && this.allTransactions().length > 0) {
       // @ts-ignore-next-line
       this.activeTransaction.set(this.allTransactions()[this.index]);
-      console.log(this.activeTransaction)
+      console.log(this.activeTransaction())
     }
   })
 

@@ -1,9 +1,15 @@
-<div>
-  <a [routerLink]="['/transaction', index()]"
-    >{{ data()!.otherParty ? data()!.otherParty!.name : "not found" }}
-    {{
+<div class="transaction-item">
+  <a [routerLink]="['/transaction', index()]" class="transaction-item__link"
+    ><span class="transaction-item__link-text">
+      @if (data()!.otherParty) {
+      {{ data()!.otherParty!.name }}
+      } @else {
+      <em>Not found</em>
+      }</span
+    >
+    <strong>{{
       data()!.amount
         | transferConverter : data()!.currencyCode : data()!.currencyRate
-    }}</a
+    }}</strong></a
   >
 </div>
