@@ -1,11 +1,15 @@
-@if(hasError){
-<section>
+@if(hasError()){
+<main class="error-message">
   <h2>Something went wrong.</h2>
   <p>Please try again later</p>
-</section>
+</main>
 } @else {
-<section>
-  <h1>Api data</h1>
-  <router-outlet> </router-outlet>
-</section>
+<main class="main">
+  <div class="main__wrapper">
+    <h1>Rabobank Transacties</h1>
+    <section class="main__container">
+      <router-outlet> </router-outlet>
+    </section>
+  </div>
+</main>
 }

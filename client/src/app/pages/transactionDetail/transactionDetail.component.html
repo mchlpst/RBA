@@ -1,11 +1,11 @@
 <main>
   <div>
     {{
-      activeTransaction!.amount
+      activeTransaction()!.amount
         | transferConverter
-          : activeTransaction!.currencyCode
-          : activeTransaction!.currencyRate
+          : activeTransaction()!.currencyCode
+          : activeTransaction()!.currencyRate
     }}
   </div>
-  {{ activeTransaction!.timestamp | date : "medium" }}
+  {{ activeTransaction()!.timestamp | date : "medium" }}
 </main>

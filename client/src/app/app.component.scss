@@ -1,0 +1,20 @@
+$componentMain: "main";
+$componentError: "error-message";
+
+.#{$componentError} {
+  display: flex;
+  justify-content: center;
+}
+.#{$componentMain} {
+  display: flex;
+  justify-content: center;
+  padding-top: 60px;
+  &__container {
+    max-width: 1023px;
+    padding: 30px;
+    margin: 40px 0;
+    background-color: white;
+    border: 1px solid var(--color-background-highlight-dark);
+    border-radius: 10px;
+  }
+}

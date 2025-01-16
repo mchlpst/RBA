@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { TransactionList } from '../../../components/transactionList/transactionList.component';
+import { TransactionList } from '../../components/transactionList/transactionList.component';
 
 @Component({
   selector: 'transactions-overview',

@@ -8,6 +8,7 @@
   --color-text: hsl(219, 2%, 13%);
   --color-logo: hsl(235, 100%, 33%);
   --color-background-highlight: hsl(219, 2%, 96%);
+  --color-background-highlight-dark: hsl(219, 2%, 76%);
   --color-background: hsl(0, 0%, 100%);
 
   // font
@@ -20,4 +21,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+body {
+  background-color: var(--color-background-highlight);
+  font-family: var(--font-family);
+  color: var(--color-text);
+  line-height: var(--font-line-height);
+  font-size: var(--font-size);
 }
